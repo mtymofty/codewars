@@ -1,3 +1,4 @@
+# 1.
 def square_digits(num: int) -> int:
     """
     Square every digit of a number and concatenate them.

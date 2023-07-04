@@ -1,3 +1,4 @@
+# 1.
 def find_needle(haystack):
     """
     Write a function findNeedle() that takes an array full of junk but containing one "needle"
@@ -12,6 +13,7 @@ def find_needle(haystack):
     return f'found the needle at position {haystack.index("needle")}'
 
 
+# 2.
 def opposite(number):
     """
     Very simple, given an integer or a floating-point number, find its opposite.
@@ -24,6 +26,8 @@ def positive_sum(arr):
     """
     return sum(n for n in arr if n > 0)
 
+
+# 3.
 def grow(arr):
     """
     Given a non-empty array of integers, return the result of multiplying the values together in order.
@@ -34,12 +38,16 @@ def grow(arr):
 
     return res
 
+
+# 4.
 def century(year):
     """
     Given a year, return the century it is in.
     """
     return year//100 if year%100 == 0 else year//100+1
 
+
+# 5.
 def smash(words):
     """
     Write a function that takes an array of words and smashes them together into a sentence and returns the sentence.
