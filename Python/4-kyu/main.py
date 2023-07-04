@@ -128,3 +128,38 @@ def decode_morse(morseCode):
     if curr_seq:
         mess += MORSE_CODE[curr_seq]
     return mess
+
+def solution(args):
+    """
+    A format for expressing an ordered list of integers is to use a comma separated list of either
+    individual integers or a range of integers denoted by the starting integer separated from the
+    end integer in the range by a dash, '-'. The range includes all integers in the interval including
+    both endpoints. It is not considered a range unless it spans at least 3 numbers. For example "12,13,15-17"
+    Complete the solution so that it takes a list of integers in increasing order and returns a correctly
+    formatted string in the range format.
+    """
+    res = ""
+    curr_seq = []
+    last_num = None
+    for num in args:
+        if last_num is None:
+            curr_seq.append(num)
+        else:
+            if num - last_num == 1:
+                curr_seq.append(num)
+            else:
+                res += get_string(curr_seq)
+                curr_seq = [num]
+        last_num = num
+    return res + get_string(curr_seq).rstrip(',')
+
+def get_string(curr_seq):
+    res = ""
+    if len(curr_seq) < 3:
+        for n in curr_seq:
+            res += f"{n},"
+    else:
+        res += f"{curr_seq[0]}-{curr_seq[-1]},"
+    return res
+
+solution([-6,-3,-2,-1,0,1,3,4,5,7,8,9,10,11,14,15,17,18,19,20])
