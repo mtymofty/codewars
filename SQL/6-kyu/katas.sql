@@ -114,3 +114,29 @@ from eusales
 where price > 50
 
 
+-- 5.
+-- You need to build a pivot table WITHOUT using CROSSTAB function.
+-- Having two tables products and details you need to select a pivot table of
+-- products with counts of details occurrences (possible details values are ['good', 'ok', 'bad'].
+
+-- Results should be ordered by product's name.
+
+select
+  name,
+  count(CASE WHEN detail='good' THEN 1 END) as good,
+  count(CASE WHEN detail='ok' THEN 1 END) as ok,
+  count(CASE WHEN detail='bad' THEN 1 END) as bad
+from products p join details d on(p.id=d.product_id)
+group by name
+order by name
+
+
+
+
+
+
+
+
+
+
+
